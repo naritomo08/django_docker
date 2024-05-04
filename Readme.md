@@ -55,7 +55,9 @@ python manage.py runserver 0.0.0.0:8000
 
 http://localhost:8000
 
-### サイトに対し自動起動させる場合
+## サイトに対し自動起動させる場合
+
+### ソース修正
 
 ```bash
 新しいターミナル開く
@@ -74,6 +76,11 @@ vi Dockerfile
 #RUN chmod +x /root/workspace/boot.sh
 #ENTRYPOINT ["./boot.sh"]
 
+```
+
+### ソース立ち上げ
+
+```bash
 docker-compose down
 docker-compose build
 docker-compose up -d
