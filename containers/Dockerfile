@@ -9,3 +9,7 @@ WORKDIR /root/workspace
 RUN pip install --upgrade pip\
     && pip install --upgrade setuptools\
     && pip install -r requirements.txt
+
+#COPY boot.sh /root/workspace/
+#RUN chmod +x /root/workspace/boot.sh
+#ENTRYPOINT ["./boot.sh"]
