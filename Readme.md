@@ -37,17 +37,19 @@ docker-compose up -d
 ```
 
 ### djangoサイトを構築する(初回)
+
 ```bash
 docker-compose exec django /bin/bash
-django-admin startproject site
-mv site/site site/config
+django-admin startproject config .
 
-vi site/config/settings.py
+vcscodeで以下のファイルを編集する
+config/settings.py
 
 以下の内容に書き換える
 ALLOWED_HOSTS = ['*']
 
 サイトを立ち上げる。
+python manage.py migrate
 python manage.py runserver 0.0.0.0:8000
 ```
 
@@ -62,19 +64,18 @@ http://localhost:8000
 ```bash
 新しいターミナル開く
 
-cd django_docker/src
-mv src/site/ src/
-rm -rf site
-
 ここまでの作業について、すでに作成しているDjangoソースを使用する場合、
 src配下にソースファイルをおいてもいい。
 
-vi Dockerfile
+以下のファイルを編集する。
+
+containers/Dockerfile
 
 以下のマスク外す
-#COPY boot.sh /root/workspace/
-#RUN chmod +x /root/workspace/boot.sh
-#ENTRYPOINT ["./boot.sh"]
+#RUN mkdir -p /root/shell
+#COPY boot.sh /root/shell/
+#RUN chmod +x /root/shell/boot.sh
+#ENTRYPOINT ["/root/shell/boot.sh"]
 
 ```
 
