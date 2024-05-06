@@ -17,3 +17,22 @@ services:
     volumes:
       # ローカルの作業ディレクトリと仮想環境の作業ディレクトリの対応づけ
       - ${SRC_PATH}:/root/workspace
+
+    depends_on:
+      - db
+  
+  db:
+    platform: linux/x86_64
+    image: mysql:5.7.33
+    volumes:
+      - ./mysql/volume:/var/lib/mysql
+      - ./mysql/my.cnf:/etc/my.cnf
+    environment:
+      MYSQL_DATABASE: django_local
+      MYSQL_USER: django_user
+      MYSQL_PASSWORD: secret
+      MYSQL_ROOT_PASSWORD: secret
+      TZ: Asia/Tokyo
+    ports:
+        - "3306:3306"
+    restart: always
