@@ -8,7 +8,8 @@ WORKDIR /root/workspace
 
 RUN pip install --upgrade pip\
     && pip install --upgrade setuptools\
-    && pip install -r requirements.txt
+    && pip install -r requirements.txt\
+    && pip install mysqlclient
 
 RUN mkdir -p /root/shell
 COPY boot.sh /root/shell/
