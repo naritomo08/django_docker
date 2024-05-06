@@ -19,7 +19,7 @@ cd django_docker
 作成したフォルダで以下のコマンドを入れる。
 
 ```bash
- rm -rf .git
+rm -rf .git
 ```
 
 ### .envファイルを作成する
@@ -31,7 +31,6 @@ cp .env.example .env
 ### コンテナ稼働する
 
 ```bash
-cd app
 docker-compose build
 docker-compose up -d
 ```
