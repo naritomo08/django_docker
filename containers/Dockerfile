@@ -10,7 +10,7 @@ RUN pip install --upgrade pip\
     && pip install --upgrade setuptools\
     && pip install -r requirements.txt
 
-#RUN mkdir -p /root/shell
-#COPY boot.sh /root/shell/
-#RUN chmod +x /root/shell/boot.sh
-#ENTRYPOINT ["/root/shell/boot.sh"]
+RUN mkdir -p /root/shell
+COPY boot.sh /root/shell/
+RUN chmod +x /root/shell/boot.sh
+ENTRYPOINT ["/root/shell/boot.sh"]
