@@ -9,7 +9,9 @@ WORKDIR /root/workspace
 RUN pip install --upgrade pip\
     && pip install --upgrade setuptools\
     && pip install -r requirements.txt\
-    && pip install mysqlclient
+    && pip install mysqlclient\
+    && pip install django-bootstrap5\
+    && pip install django-environ
 
 RUN mkdir -p /root/shell
 COPY boot.sh /root/shell/

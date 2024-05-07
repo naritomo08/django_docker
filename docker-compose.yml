@@ -24,7 +24,7 @@ services:
   
   db:
     platform: linux/x86_64
-    image: mysql:5.7.33
+    image: mysql:8.0
     volumes:
       - ./mysql/volume:/var/lib/mysql
       - ./mysql/my.cnf:/etc/my.cnf
