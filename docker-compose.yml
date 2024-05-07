@@ -19,7 +19,8 @@ services:
       - ${SRC_PATH}:/root/workspace
 
     depends_on:
-      - db
+      db:
+        condition: service_healthy
   
   db:
     platform: linux/x86_64
@@ -36,3 +37,9 @@ services:
     ports:
         - "3306:3306"
     restart: always
+    healthcheck:   # here
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost", "-u", "root", "-p$MYSQL_ROOT_PASSWORD"]
+      interval: 30s
+      timeout: 5s
+      retries: 6
+      start_period: 30s
