@@ -6,12 +6,14 @@ RUN mkdir -p /root/workspace
 COPY requirements.txt /root/workspace/
 WORKDIR /root/workspace
 
-RUN pip install --upgrade pip\
-    && pip install --upgrade setuptools\
-    && pip install -r requirements.txt\
-    && pip install mysqlclient\
-    && pip install django-bootstrap5\
-    && pip install django-environ
+#RUN pip install --upgrade pip\
+    #&& pip install --upgrade setuptools\
+    #&& pip install -r requirements.txt\
+    #&& pip install mysqlclient\
+    #&& pip install django-bootstrap5\
+    #&& pip install django-environ
+
+RUN pip install -r requirements.txt
 
 RUN mkdir -p /root/shell
 COPY boot.sh /root/shell/
