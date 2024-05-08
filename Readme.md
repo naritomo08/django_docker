@@ -91,3 +91,15 @@ docker-compose up -d
 http://localhost:8000
 
 すでに作成したsrcフォルダはどっかのgitリポジトリに保管することをおすすめします
+
+## ブランチ
+
+* main 初期ブランチ
+
+* devlop 開発ブランチ
+
+* djangosite djangoサイト用ブランチ
+
+以下URLサイトで使用する。
+
+https://github.com/naritomo08/django_web
