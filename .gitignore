@@ -1,3 +1,4 @@
 .env
 /src
 /mysql/volume
+.DS_Store
