@@ -91,3 +91,7 @@ docker-compose up -d
 http://localhost:8000
 
 すでに作成したsrcフォルダはどっかのgitリポジトリに保管することをおすすめします
+
+## 関連Qiita記事
+
+- [個別記事から未紹介だった公開GitHubリポジトリを整理してみた](https://qiita.com/naritomo08/items/1620081b4363c3d0b400)
